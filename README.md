@@ -1,66 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 20px;">
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  <h1>Carrozza App 🚗</h1>
 
-## About Laravel
+  <p>A simple Laravel application for managing <strong>cars</strong> and <strong>manufacturers</strong>.</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+  <p>It allows you to:</p>
+  <ul>
+    <li>Add, edit, view, and delete car models</li>
+    <li>Add and manage manufacturers</li>
+    <li>Filter cars by manufacturer</li>
+    <li>Validate inputs (model, year, salesperson email, phone, etc.)</li>
+    <li>Persist filter selections using localStorage</li>
+  </ul>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+  <p><strong>🌐 Live Demo:</strong> 
+    <a href="https://happy-marmoset-cachia-13eeac70.koyeb.app/" target="_blank">
+      Carrozza App on Koyeb
+    </a>
+  </p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <hr>
 
-## Learning Laravel
+  <h2>🚀 Features</h2>
+  <ul>
+    <li>Laravel 10 backend</li>
+    <li>PostgreSQL database</li>
+    <li>Bootstrap UI components</li>
+    <li>Manufacturer–Car relationship (foreign key)</li>
+    <li>Form validation with error messages</li>
+    <li>HTTPS forced in production</li>
+    <li>Deployment on <strong>Koyeb</strong></li>
+  </ul>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  <hr>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+  <h2>🛠️ Installation (Local Development)</h2>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  <h3>1. Clone the repository</h3>
+  <pre><code>git clone https://github.com/your-username/your-repo.git
+cd your-repo</code></pre>
 
-## Laravel Sponsors
+  <h3>2. Install dependencies</h3>
+  <pre><code>composer install
+npm install &amp;&amp; npm run dev</code></pre>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  <h3>3. Set up environment</h3>
+  <pre><code>cp .env.example .env</code></pre>
 
-### Premium Partners
+  <p>Update <code>.env</code> with your database credentials:</p>
+  <pre><code>DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=carrozza
+DB_USERNAME=your_username
+DB_PASSWORD=your_password</code></pre>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  <h3>4. Generate Laravel app key</h3>
+  <pre><code>php artisan key:generate</code></pre>
 
-## Contributing
+  <h3>5. Run migrations</h3>
+  <pre><code>php artisan migrate --seed</code></pre>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  <hr>
 
-## Code of Conduct
+  <h2>▶️ Running Locally</h2>
+  <pre><code>php artisan serve</code></pre>
+  <p>Visit: <a href="http://localhost:8000" target="_blank">http://localhost:8000</a></p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  <hr>
 
-## Security Vulnerabilities
+  <h2>🌍 Deployment (Koyeb)</h2>
+  <p>This app is deployed on <a href="https://www.koyeb.com/" target="_blank">Koyeb</a>.</p>
+  <p>Steps followed:</p>
+  <ol>
+    <li>Push code to GitHub</li>
+    <li>Connect GitHub repo to Koyeb</li>
+    <li>Add environment variables (<code>.env</code>)</li>
+    <li>Run migrations with:
+      <pre><code>php artisan migrate --force</code></pre>
+    </li>
+    <li>Then run seeders with:
+        <pre><code>php artisan db:seed --class=CarSeeder --force
+php artisan db:seed --class=ManufacturerSeeder --force</code></pre>
+    </li>
+    <li>Then run seeders with:
+        <pre><code>php artisan db:seed --class=CarSeeder --force
+php artisan db:seed --class=ManufacturerSeeder --force</code></pre>
+    </li>
+  </ol>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  <hr>
 
-## License
+  <h2>📂 Project Structure</h2>
+  <pre><code>app/Http/Controllers   -&gt; CarController, ManufacturerController
+app/Models             -&gt; Car.php, Manufacturer.php
+database/migrations    -&gt; Database schema
+resources/views        -&gt; Blade templates
+routes/web.php         -&gt; Application routes</code></pre>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  <hr>
+
+  <h2>✨ Example Pages</h2>
+  <ul>
+    <li><code>/cars</code> → List of cars with filter</li>
+    <li><code>/cars/create</code> → Add a new car</li>
+    <li><code>/manufacturers</code> → List of manufacturers</li>
+    <li><code>/manufacturers/create</code> → Add a manufacturer</li>
+  </ul>
+
+  <hr>
+
+  <h2>📝 License</h2>
+  <p>This project is for educational purposes. Free to use and adapt.</p>
+
+</body>
+</html>
