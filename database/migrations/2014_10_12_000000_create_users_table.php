@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    // On some hosts + Postgres, adding constraints inside a transactional migration
+    // can be finicky. Disable the transaction for this migration.
+    public bool $withinTransaction = false; // Laravel 10+
+
     public function up(): void
     {
+        // 1) Create the table (no unique yet)
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -19,14 +21,14 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+        });
 
-            $table->unique('email'); // <- semicolon added
+        // 2) Add the unique constraint in a separate statement
+        Schema::table('users', function (Blueprint $table) {
+            $table->unique('email', 'users_email_unique');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');
