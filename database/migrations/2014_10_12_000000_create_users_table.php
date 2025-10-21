@@ -20,7 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->unique('email')
+            $table->unique('email'); // <- semicolon added
         });
     }
 
