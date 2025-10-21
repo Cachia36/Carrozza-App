@@ -63,9 +63,11 @@ DB_PASSWORD=your_password</code></pre>
   <h3>4. Generate Laravel app key</h3>
   <pre><code>php artisan key:generate</code></pre>
 
-  <h3>5. Run migrations</h3>
-  <pre><code>php artisan migrate --seed</code></pre>
-
+  <h3>5. Run migrations & seeders</h3>
+  <pre><code>php artisan migrate --force
+php artisan db:seed --class=CarSeeder --force
+php artisan db:seed --class=ManufacturerSeeder --force</code></pre>
+    
   <hr>
 
   <h2>▶️ Running Locally</h2>
@@ -81,15 +83,9 @@ DB_PASSWORD=your_password</code></pre>
     <li>Push code to GitHub</li>
     <li>Connect GitHub repo to Koyeb</li>
     <li>Add environment variables (<code>.env</code>)</li>
-    <li>Run migrations with:
-      <pre><code>php artisan migrate --force</code></pre>
-    </li>
-    <li>Then run seeders with:
-        <pre><code>php artisan db:seed --class=CarSeeder --force
-php artisan db:seed --class=ManufacturerSeeder --force</code></pre>
-    </li>
-    <li>Then run seeders with:
-        <pre><code>php artisan db:seed --class=CarSeeder --force
+    <li>Run migrations & seeders with:
+      <pre><code>php artisan migrate --force</code>
+php artisan db:seed --class=CarSeeder --force
 php artisan db:seed --class=ManufacturerSeeder --force</code></pre>
     </li>
   </ol>
