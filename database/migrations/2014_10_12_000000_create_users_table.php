@@ -8,7 +8,7 @@ return new class extends Migration
 {
     // On some hosts + Postgres, adding constraints inside a transactional migration
     // can be finicky. Disable the transaction for this migration.
-    public bool $withinTransaction = false; // Laravel 10+
+    public $withinTransaction = false; // Laravel 10+
 
     public function up(): void
     {
