@@ -27,7 +27,7 @@
                   <div class="col-md-6">
                     <div class="row">
                       <div class="col">
-                      <form action="{{ url('/cars') }}" method="GET">
+                      <form id="filterForm" action="{{ url('/cars') }}" method="GET">
                         <select id="filter" class="custom-select" style="margin-bottom: 20px;"
                               name="manufacturer_id">
                           <option value="" selected>All Manufacturers</option>
@@ -84,33 +84,26 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // Get the stored value from localStorage and set it as the selected value in the dropdown
-            var selectedManufacturer = localStorage.getItem('selectedManufacturer');
-            if (selectedManufacturer) {
-                $('#filter').val(selectedManufacturer);
-            }
+      $(function () {
+        const $filter = $('#filter');      // the dropdown
+        const $form   = $('#filterForm');  // the GET filter form
 
-            $('#filter').change(function () {
-                var selectedValue = $(this).val();
-                if (selectedValue === '') {
-                    // If 'All Manufacturers' is selected, reset the form action to its default behavior (show all cars)
-                    $('form').attr('action', '{{ url('/cars') }}');
-                } else {
-                    // Otherwise, submit the form with the selected manufacturer filter
-                    $('form').attr('action', '{{ url('/cars') }}?manufacturer_id=' + selectedValue);
-                }
+        // Restore previously selected manufacturer from localStorage
+        const saved = localStorage.getItem('selectedManufacturer');
+        if (saved !== null) {
+          $filter.val(saved);
+        }
 
-                // Store the selected value in localStorage
-                localStorage.setItem('selectedManufacturer', selectedValue);
-
-                $('form').submit(); // Submit the form
-            });
+        // When user changes manufacturer, save and submit only the filter form
+        $filter.on('change', function () {
+          const val = $(this).val();
+          localStorage.setItem('selectedManufacturer', val);
+          $form.trigger('submit'); // submit only this form
         });
+      });
 
       function confirmDelete() {
-        var confirmation = confirm('Are you sure?');
-        return confirmation;
+        return confirm('Are you sure?');
       }
     </script>
 

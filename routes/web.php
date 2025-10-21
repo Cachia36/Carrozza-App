@@ -25,3 +25,5 @@ Route::get('/cars/show/{id}', [CarController::class, 'show'])->name('cars.show')
 Route::get('/cars/{id}/edit', [CarController::class, 'edit'])->name('cars.edit');
 Route::post('/cars/{id}/edit', [CarController::class, 'update'])->name('cars.update');
 Route::delete('/cars/{id}', [CarController::class, 'delete'])->name('cars.delete');
+Route::get('/manufacturers/create', [ManufacturerController::class, 'create'])->name('manufacturers.create');
+Route::post('/manufacturers/create', [ManufacturerController::class, 'store'])->name('manufacturers.store');

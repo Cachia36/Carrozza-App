@@ -9,7 +9,9 @@
                 <div class="card-header card-title">
                   <div class="d-flex align-items-center">
                     <h2 class="mb-0">All Manufacturers</h2>
-                    
+                    <div class="ml-auto">
+                      <a href="/manufacturers/create" class="btn btn-success"><i class="fa fa-plus-circle"></i> Add New</a>
+                    </div>
                   </div>
                 </div>
               <div class="card-body">
