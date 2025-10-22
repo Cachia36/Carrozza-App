@@ -19,7 +19,7 @@
   </ul>
 
   <p><strong>🌐 Live Demo:</strong> 
-    <a href="https:/carrozzaapp.koyeb.app/" target="_blank">
+    <a href="https://carrozzaapp.koyeb.app/" target="_blank">
       Carrozza App on Koyeb
     </a>
   </p>
